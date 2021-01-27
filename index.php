@@ -89,17 +89,18 @@
                   </div>
                 
                 <div class="form-group">
+                <div class="form-check">
                             <div class="g-recaptcha" id="invalidCheck" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div>
                             <div class="valid-feedback">¡Aceptado!</div> 
                           </div>
             
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                       <label class="form-check-label" for="invalidCheck">Acepto términos y condiciones</label>
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
-                  </div>
+                  </div> -->
                   <button class="btn btn-primary" type="submit">Enviar</button>
                 </form>
         </div>   
