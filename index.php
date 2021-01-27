@@ -90,9 +90,9 @@
                 
                 <div class="form-group">
                 <div class="form-check">
-                            <div class="g-recaptcha" id="invalidCheck" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div>
+                            <div class="g-recaptcha form-control" id="invalidCheck" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div>
                             <div class="valid-feedback">¡Aceptado!</div> 
-                          </div>
+                          </div><br>
             
                   <!-- <div class="form-group">
                     <div class="form-check">
