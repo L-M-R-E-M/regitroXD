@@ -47,26 +47,27 @@ $(document).ready(function() {
 	if(valor1.length<8 || valor1.length>10){
   span.text(longitud).addClass('negacion');
   
-    evt.preventDefault();
+    //evt.preventDefault();
     evt.stopPropagation();
     
 	}else{
     if(valor1 != valor2){
       span.text(negacion).addClass('negacion');	
       
-        evt.preventDefault();
+        //evt.preventDefault();
         evt.stopPropagation();
         
       }else{
         if(strongRegex.test(valor1)){
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
+            evt.cancelable();
             }
           	
           }else{
             span.text(min).addClass('negacion');
             
-              evt.preventDefault();
+              //evt.preventDefault();
               evt.stopPropagation();
               
           }
