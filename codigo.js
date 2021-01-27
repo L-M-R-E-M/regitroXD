@@ -11,9 +11,81 @@
           event.preventDefault();
           event.stopPropagation();
         }
-        form.classList.add('was-validated');
+      form.classList.add('was-validated');
+
       }, false);
     });
   }, false);
 })();
+
+
+$(document).ready(function() {
+  //variables
+  var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+	var pass1 = $('[name=pass1]');
+	var pass2 = $('[name=pass2]');
+	var confirmacion = "¡Ok válido!";
+	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
+  var negacion = "No coinciden las contraseñas";
+  var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
+	//var vacio = "La contraseña no puede estar vacía";
+	//oculto por defecto el elemento span
+	var span = $('<span></span>').insertAfter(pass2);
+	span.hide();
+	//función que comprueba las dos contraseñas
+	function coincidePassword(){
+	var valor1 = pass1.val();
+	var valor2 = pass2.val();
+	//muestro el span
+	span.show().removeClass();
+	//condiciones dentro de la función
+	
+	// if(valor1.length==0 || valor1==""){
+	// span.text(vacio).addClass('negacion');	
+	// }
+	if(valor1.length<8 || valor1.length>10){
+  span.text(longitud).addClass('negacion');
+	}else{
+    if(valor1 != valor2){
+      span.text(negacion).addClass('negacion');	
+      }else{
+        if(strongRegex.test(valor1)){
+          if(valor1.length!=0 && valor1==valor2){
+            span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
+            }
+          	
+          }else{
+            span.text(min).addClass('negacion');
+          }
+        
+      }
+  }
+	
+	}
+	//ejecuto la función al soltar la tecla
+	pass2.keyup(function(){
+	coincidePassword();
+	});
+});
+
+
+$('#pass1').keyup(function(e) {
+  var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+  var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+  var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+  if (false == enoughRegex.test($(this).val())) {
+          $('#passstrength').html('Pon más caracteres.');
+  } else if (strongRegex.test($(this).val())) {
+          $('#passstrength').className = 'ok';
+          $('#passstrength').html('Fuerte!');
+  } else if (mediumRegex.test($(this).val())) {
+          $('#passstrength').className = 'alert';
+          $('#passstrength').html('Media!');
+  } else {
+          $('#passstrength').className = 'error';
+          $('#passstrength').html('Débil!');
+  }
+  return true;
+});
+
 
