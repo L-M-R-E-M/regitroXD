@@ -90,8 +90,7 @@
                 
                 <div class="form-group">
                 <div class="form-check">
-                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div>
-                            <div class="valid-feedback">¡Aceptado!</div> 
+                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div> 
                           </div>
                           </div>
             

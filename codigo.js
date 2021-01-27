@@ -35,7 +35,8 @@ $(document).ready(function() {
 	//función que comprueba las dos contraseñas
 	function coincidePassword(){
 	var valor1 = pass1.val();
-	var valor2 = pass2.val();
+  var valor2 = pass2.val();
+  var XD = 0;
 	//muestro el span
 	span.show().removeClass();
 	//condiciones dentro de la función
@@ -47,34 +48,48 @@ $(document).ready(function() {
 	if(valor1.length<8 || valor1.length>10){
   span.text(longitud).addClass('negacion');
   
-    evt.preventDefault();
-    evt.stopPropagation();
+    //evt.preventDefault();
+    //evt.stopPropagation();
+    XD = 1;
     
 	}else{
     if(valor1 != valor2){
       span.text(negacion).addClass('negacion');	
       
-        evt.preventDefault();
-        evt.stopPropagation();
+        //evt.preventDefault();
+        //evt.stopPropagation();
+        XD = 1;
         
       }else{
         if(strongRegex.test(valor1)){
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
-            evt.stopPropagation();
+            
+            // if (XD == 1) {
+            //   evt.preventDefault();
+            //   evt.stopPropagation();
+            // }
+            XD = 0;
+
             }
           	
           }else{
             span.text(min).addClass('negacion');
             
-              evt.preventDefault();
-              evt.stopPropagation();
+              //evt.preventDefault();
+              //evt.stopPropagation();
+              XD = 1;
               
           }
         
       }
   }
 });
+
+if (XD == 1) {
+  evt.preventDefault();
+  evt.stopPropagation();
+}
 	
 	}
 	//ejecuto la función al soltar la tecla
