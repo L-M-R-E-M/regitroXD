@@ -48,14 +48,14 @@ $(document).ready(function() {
   span.text(longitud).addClass('negacion');
   
     evt.preventDefault();
-    //evt.stopPropagation();
+    evt.stopPropagation();
     
 	}else{
     if(valor1 != valor2){
       span.text(negacion).addClass('negacion');	
       
         evt.preventDefault();
-        //evt.stopPropagation();
+        evt.stopPropagation();
         
       }else{
         if(strongRegex.test(valor1)){
@@ -68,7 +68,7 @@ $(document).ready(function() {
             span.text(min).addClass('negacion');
             
               evt.preventDefault();
-              //evt.stopPropagation();
+              evt.stopPropagation();
               
           }
         

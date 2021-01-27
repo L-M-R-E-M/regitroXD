@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5 bg-white ">
-        <div class="card-header">REGISTRO NUEVO</div>
+        <div class="card-header">NUEVO REGISTRO</div>
         <div class="card-body">
         <form id="form1" name="form1" action="procesar.php" method="post" class="needs-validation" novalidate>
                   <div class="form-row">
