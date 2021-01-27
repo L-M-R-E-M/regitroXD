@@ -28,6 +28,7 @@ $(document).ready(function() {
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
+  var XD = 0;
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
@@ -36,7 +37,7 @@ $(document).ready(function() {
 	function coincidePassword(){
 	var valor1 = pass1.val();
   var valor2 = pass2.val();
-  var XD = 0;
+  
 	//muestro el span
 	span.show().removeClass();
 	//condiciones dentro de la función
@@ -44,7 +45,7 @@ $(document).ready(function() {
 	// if(valor1.length==0 || valor1==""){
 	// span.text(vacio).addClass('negacion');	
   // }
-  $("#form1").on('submit', function(evt){
+  //$("#form1").on('submit', function(evt){
 	if(valor1.length<8 || valor1.length>10){
   span.text(longitud).addClass('negacion');
   
@@ -64,12 +65,10 @@ $(document).ready(function() {
         if(strongRegex.test(valor1)){
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
+      
             
-            // if (XD == 1) {
-            //   evt.preventDefault();
-            //   evt.stopPropagation();
-            // }
             XD = 0;
+
 
             }
           	
@@ -84,18 +83,21 @@ $(document).ready(function() {
         
       }
   }
+  $("#form1").on('submit', function(evt){
+  if (XD == 1) {
+    evt.preventDefault();
+    evt.stopPropagation();
+  }
 });
-
-if (XD == 1) {
-  evt.preventDefault();
-  evt.stopPropagation();
-}
 	
-	}
+  }
 	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
 	coincidePassword();
-	});
+  });
+  pass1.keyup(function(){
+    coincidePassword();
+    });
 });
 
 
