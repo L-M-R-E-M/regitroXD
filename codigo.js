@@ -152,19 +152,9 @@ $(document).ready(function() {
     });
 });
 
-function miFuncion(a) {
-  var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-      alert("Captcha no verificado");
-      return false;
-    event.preventDefault();
-  } else {
-    alert("Captcha verificado");
-    return true;
-  }
-}
-
+function enabledSubmit(response) {
+  document.getElemenstByName('enviar')[0].disabled = false;
+ }
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
