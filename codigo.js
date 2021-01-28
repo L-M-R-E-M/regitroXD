@@ -20,7 +20,7 @@
   }, false);
 })();
 
-
+coincideRecapcha();
 
 function coincideRecapcha(){
   //validar reCAPCHA
