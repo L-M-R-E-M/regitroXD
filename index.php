@@ -121,6 +121,17 @@
     <script src="popper/popper.min.js"></script>	 	 	
     <script src="bootstrap4/js/bootstrap.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="codigo.js"></script> 	  	
+    <script src="codigo.js"></script> 
+    <script>
+  function miFuncion() {
+    var response = grecaptcha.getResponse();
+
+    if(response.length == 0){
+      alert("Captcha no verificado")
+    } else {
+      alert("Captcha verificado");
+    }
+  }
+</script>	  	
   </body>
 </html>

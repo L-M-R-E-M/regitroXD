@@ -152,17 +152,6 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-  var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-    alert("Captcha no verificado")
-  } else {
-    alert("Captcha verificado");
-    document.getElemenstByName('enviar')[0].disabled = false;
-  }
-});
-
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
   var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
