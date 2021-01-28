@@ -58,7 +58,6 @@ $(document).ready(function() {
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
   var XD = 0;
-  var response = grecaptcha.getResponse();
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
@@ -97,7 +96,7 @@ $(document).ready(function() {
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
-            
+            var response = grecaptcha.getResponse();
             //XD = 0;
             if(response.length == 0){
                 XD = 1;
