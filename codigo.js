@@ -18,13 +18,11 @@
   }, false);
 })();
 
-(function() {
-//validar reCAPCHA
-var pass1 = $('[name=pass1]');
-var response = grecaptcha.getResponse();
+
 
 function coincideRecapcha(){
-  
+  //validar reCAPCHA
+  var response = grecaptcha.getResponse();
 
   if(response.length === 0){
     //alert("Captcha no verificado")
@@ -34,10 +32,7 @@ function coincideRecapcha(){
     $('#boton').attr("disabled", true);
   }
 }
-pass1.keyup(function(){
-	coincideRecapcha();
-  });
-});
+
 
 $(document).ready(function() {
   //variables
@@ -109,6 +104,7 @@ $(document).ready(function() {
   });
   pass1.keyup(function(){
     coincidePassword();
+    coincideRecapcha();
     });
 });
 
