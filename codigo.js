@@ -96,19 +96,9 @@ $(document).ready(function() {
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
-            var response = grecaptcha.getResponse();
-            //XD = 0;
-            if(response.length == 0){
-                XD = 1;
-                  alert("Captcha no verificado");
-                  //return false;
-                //evt.preventDefault();
-              } else {
-                XD = 0;
-                alert("Captcha verificado");
-                //return true;
-              }
-
+            
+            XD = 0;
+          
 
             }
           	
@@ -123,6 +113,18 @@ $(document).ready(function() {
         
       }
   }
+
+  var response = grecaptcha.getResponse();
+            if(response.length == 0){
+                XD = 1;
+                  alert("Captcha no verificado");
+                  //return false;
+                //evt.preventDefault();
+              } else {
+                XD = 0;
+                alert("Captcha verificado");
+                //return true;
+              }
 
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
