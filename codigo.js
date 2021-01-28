@@ -110,9 +110,10 @@ $(document).ready(function() {
 
     if(response.length == 0){
       alert("Captcha no verificado")
+      XD = 1;
     } else {
       //alert("Captcha verificado");
-      document.getElemenstByName('enviar')[0].disabled = false;
+      XD = 0;
     }
   }
     
