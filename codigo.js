@@ -19,11 +19,13 @@
   }, false);
 })();
 
-$(document).on('change','#invalidCheck',function(){
-  if(this.checked) {
-    coincideRecapcha();
-  }
-  
+$(function() {
+
+  $(document).on('change','#invalidCheck',function(){
+      if(this.checked) {
+        coincideRecapcha();
+      }
+  }); 
 });
 
 function coincideRecapcha(){
