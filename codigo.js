@@ -120,6 +120,15 @@ $(document).ready(function() {
     evt.stopPropagation();
   }
 });
+
+var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+      alert("Captcha no verificado");
+  } else {
+    alert("Captcha verificado");
+    document.getElemenstByName('enviar')[0].disabled = false;
+  }
 	
   }
 
@@ -150,15 +159,6 @@ $(document).ready(function() {
   pass1.keyup(function(){
     coincidePassword();
     });
-
-    var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-      alert("Captcha no verificado");
-  } else {
-    alert("Captcha verificado");
-    document.getElemenstByName('enviar')[0].disabled = false;
-  }
 });
 
 // function enabledSubmit(response) {
