@@ -113,6 +113,7 @@ $(document).ready(function() {
       XD = 1;
     } else {
       //alert("Captcha verificado");
+      $('#enviar').attr("disabled", true);
       XD = 0;
     }
   }
