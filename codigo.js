@@ -136,10 +136,10 @@ $(document).ready(function() {
                   //return true;
                 }
 
-                $("#form1").on('submit', function(evt){
+                $("#form1").on('submit', function(evto){
                   if (TNT == 1) {
-                    evt.preventDefault();
-                    evt.stopPropagation();
+                    evto.preventDefault();
+                    evto.stopPropagation();
                   }
                 });
         
