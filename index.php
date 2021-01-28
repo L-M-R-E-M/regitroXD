@@ -96,7 +96,7 @@
                     </div>
                   </div>
                 
-                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
+                  <div class="g-recaptcha" name="ok" id="ok" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
                   
                   <div class="form-group">
                     <div class="form-check">

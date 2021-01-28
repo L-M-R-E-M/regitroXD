@@ -104,18 +104,6 @@ $(document).ready(function() {
         
       }
   }  
-
-  if(XD == 0){
-  var response = grecaptcha.getResponse();
-
-    if(response.length == 0){
-      //alert("Captcha no verificado")
-      $('#boton').attr("disabled", false);
-    } else {
-      //alert("Captcha verificado");
-      $('#boton').attr("disabled", true);
-    }
-  }
     
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
@@ -131,6 +119,19 @@ $(document).ready(function() {
     coincidePassword();
     });
 });
+
+$('#ok').keyup(function(e) {
+  var response = grecaptcha.getResponse();
+
+    if(response.length == 0){
+      //alert("Captcha no verificado")
+      $('#boton').attr("disabled", false);
+    } else {
+      //alert("Captcha verificado");
+      $('#boton').attr("disabled", true);
+    }
+    return true;
+  });
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
