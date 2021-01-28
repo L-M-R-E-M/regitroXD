@@ -96,11 +96,11 @@
                     </div>
                   </div>
                 
-                  <div class="g-recaptcha" name="ok" id="ok" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
+                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
                   
                   <div class="form-group">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <input class="form-check-input" name="invalidCheck" type="checkbox" value="" id="invalidCheck" required>
                       <label class="form-check-label" for="invalidCheck">Acepto términos y condiciones</label>
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
