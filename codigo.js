@@ -120,32 +120,15 @@ $(document).ready(function() {
     });
 });
 
-// $('#pass1').keyup(function(s) {
-//   var response = grecaptcha.getResponse();
+var response = grecaptcha.getResponse();
 
-//     if(response.length == 0){
-//       //alert("Captcha no verificado")
-//       $('#boton').attr("disabled", false);
-//     } else {
-//       //alert("Captcha verificado");
-//       $('#boton').attr("disabled", true);
-//     }
-//     return true;
-//   });
-
-  function miFuncion(a) {
-    var response = grecaptcha.getResponse();
-
-    if(response.length == 0){
-        alert("Captcha no verificado");
-        $('#boton').attr("disabled", false);
-        return false;
+    if(response.length === 0){
+      //alert("Captcha no verificado")
+      $('#boton').attr("disabled", false);
     } else {
-      alert("Captcha verificado");
-      $('#boton').attr("disabled", true;
-      return true;
+      //alert("Captcha verificado");
+      $('#boton').attr("disabled", true);
     }
-  }
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
