@@ -109,7 +109,7 @@ $(document).ready(function() {
     var response = grecaptcha.getResponse();
 
     if(response.length == 0){
-      alert("Captcha no verificado")
+      //alert("Captcha no verificado")
       XD = 1;
     } else {
       //alert("Captcha verificado");
@@ -121,6 +121,7 @@ $(document).ready(function() {
   if (XD == 1) {
     evt.preventDefault();
     evt.stopPropagation();
+    alert("Captcha no verificado o Contraseña incorrecta")
   }
 });	
   }
