@@ -79,9 +79,6 @@
                       <div class="invalid-feedback">Complete el campo.</div>   
                       </div>
                     </div>
-                    <div class="col-md-4 mb-3">
-                    <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX"></div> 
-                  </div>
                   </div>
                 <div class="form-row">
                       <div class="col-md-4 mb-3">
@@ -98,6 +95,8 @@
                       <div class="invalid-feedback">Complete el campo.</div>   
                     </div>
                   </div>
+                
+                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX"></div> 
                   
                   <div class="form-group">
                     <div class="form-check">
