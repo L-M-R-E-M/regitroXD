@@ -15,6 +15,14 @@
 
       }, false);
     });
+    var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+      alert("Captcha no verificado");
+  } else {
+    alert("Captcha verificado");
+    document.getElemenstByName('enviar')[0].disabled = false;
+  }
   }, false);
 })();
 
@@ -119,17 +127,7 @@ $(document).ready(function() {
     evt.preventDefault();
     evt.stopPropagation();
   }
-});
-
-var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-      alert("Captcha no verificado");
-  } else {
-    alert("Captcha verificado");
-    document.getElemenstByName('enviar')[0].disabled = false;
-  }
-	
+});	
   }
 
     // var response = grecaptcha.getResponse();
