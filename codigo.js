@@ -88,6 +88,7 @@ $(document).ready(function() {
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
             XD = 0;
+            $('#invalidCheck').prop('checked',false);
           
             }
           	
