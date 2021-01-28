@@ -103,6 +103,7 @@
                       <input class="form-check-input" name="invalidCheck" type="checkbox" value="" id="invalidCheck" required>
                       <label class="form-check-label" for="invalidCheck">Acepto términos y condiciones</label>
                       <div class="valid-feedback">¡Aceptado!</div>
+                      <div class="invalid-feedback">Complete el campo.</div>
                     </div>
                   </div>
                   <button class="btn btn-primary" id="boton" name="boton" type="submit" disabled>Enviar</button>
