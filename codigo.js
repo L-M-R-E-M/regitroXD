@@ -83,6 +83,20 @@ $(document).ready(function() {
         
       }
   }
+
+  var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+    XD = 1;
+      alert("Captcha no verificado");
+      //return false;
+    evt.preventDefault();
+  } else {
+    XD = 0;
+    alert("Captcha verificado");
+    //return true;
+  }
+
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
     evt.preventDefault();
@@ -120,17 +134,5 @@ $('#pass1').keyup(function(e) {
   return true;
 });
 
-function miFuncion(a) {
-  var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-      alert("Captcha no verificado");
-      return false;
-    event.preventDefault();
-  } else {
-    alert("Captcha verificado");
-    return true;
-  }
-}
 
 
