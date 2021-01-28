@@ -40,7 +40,7 @@ $(document).ready(function() {
     XD = 1;
       alert("Captcha no verificado");
       //return false;
-    evt.preventDefault();
+    //evt.preventDefault();
   } else {
     XD = 0;
     alert("Captcha verificado");
@@ -97,14 +97,16 @@ $(document).ready(function() {
       }
   }
 
-  $("#form1").on('submit', function(evt){
-  if (XD == 1) {
-    evt.preventDefault();
-    evt.stopPropagation();
-  }
-});
+ //////
 	
   }
+  $("#form1").on('submit', function(evt){
+    if (XD == 1) {
+      evt.preventDefault();
+      evt.stopPropagation();
+    }
+  });
+
 	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
 	coincidePassword();
