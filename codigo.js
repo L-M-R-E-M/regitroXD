@@ -56,12 +56,18 @@ $(document).ready(function() {
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
-  var XD = 0;
-  var CD = 0;
+ 
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
   span.hide();
+  
+	//función que comprueba las dos contraseñas
+	function coincidePassword(){
+	var valor1 = pass1.val();
+  var valor2 = pass2.val();
+  var XD = 0;
+  var CD = 0;
 
   var response = grecaptcha.getResponse();
 
@@ -72,11 +78,6 @@ $(document).ready(function() {
       //alert("Captcha verificado");
       CD = 0;
     }
-  
-	//función que comprueba las dos contraseñas
-	function coincidePassword(){
-	var valor1 = pass1.val();
-  var valor2 = pass2.val();
   
 	//muestro el span
 	span.show().removeClass();
