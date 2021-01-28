@@ -34,12 +34,7 @@ $(function() {
     if(response.length === 0){
       alert("Captcha no verificado")
       $('#boton').attr("disabled", true);
-      $(document).on('change','#invalidCheck',function(){
-        if(this.checked) {
-            $("#invalidCheck").removeAttr('checked');
-        }
-        
-    });
+      $('input.single-checkbox').removeAttr('checked');
     } else {
       alert("Captcha verificado");
       $('#boton').attr("disabled", false);
