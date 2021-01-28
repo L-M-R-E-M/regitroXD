@@ -123,25 +123,25 @@ $(document).ready(function() {
 	
   }
 
-    var response = grecaptcha.getResponse();
-    var TNT = 0;
-              if(response.length == 0){
-                TNT = 1;
-                    alert("Captcha no verificado");
-                    //return false;
-                  //evt.preventDefault();
-                } else {
-                  TNT = 0;
-                  alert("Captcha verificado");
-                  //return true;
-                }
+    // var response = grecaptcha.getResponse();
+    // var TNT = 0;
+    //           if(response.length == 0){
+    //             TNT = 1;
+    //                 alert("Captcha no verificado");
+    //                 //return false;
+    //               //evt.preventDefault();
+    //             } else {
+    //               TNT = 0;
+    //               alert("Captcha verificado");
+    //               //return true;
+    //             }
 
-                $("#form1").on('submit', function(evto){
-                  if (TNT == 1) {
-                    evto.preventDefault();
-                    evto.stopPropagation();
-                  }
-                });
+    //             $("#form1").on('submit', function(evto){
+    //               if (TNT == 1) {
+    //                 evto.preventDefault();
+    //                 evto.stopPropagation();
+    //               }
+    //             });
         
 	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
@@ -151,6 +151,19 @@ $(document).ready(function() {
     coincidePassword();
     });
 });
+
+function miFuncion(a) {
+  var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+      alert("Captcha no verificado");
+      return false;
+    event.preventDefault();
+  } else {
+    alert("Captcha verificado");
+    return true;
+  }
+}
 
 
 $('#pass1').keyup(function(e) {
