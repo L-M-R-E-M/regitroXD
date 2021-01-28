@@ -34,7 +34,7 @@ $(function() {
     if(response.length === 0){
       alert("Captcha no verificado")
       $('#boton').attr("disabled", true);
-      $('input.single-checkbox').removeAttr('checked');
+      $('#invalidCheck').prop('checked',true);
     } else {
       alert("Captcha verificado");
       $('#boton').attr("disabled", false);
