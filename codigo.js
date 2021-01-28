@@ -105,6 +105,7 @@ $(document).ready(function() {
       }
   }  
 
+  if(XD == 0){
   var response = grecaptcha.getResponse();
 
     if(response.length == 0){
@@ -114,6 +115,7 @@ $(document).ready(function() {
       //alert("Captcha verificado");
       $('#boton').attr("disabled", true);
     }
+  }
     
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
