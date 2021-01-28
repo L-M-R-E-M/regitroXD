@@ -153,8 +153,20 @@ $(document).ready(function() {
 });
 
 function enabledSubmit(response) {
-  document.getElemenstByName('enviar')[0].disabled = false;
+  //document.getElemenstByName('enviar')[0].disabled = false;
+  document.setElemenstByName('enviar')[0].enabledSubmit;
  }
+
+ function miFuncion(a) {
+  var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+      alert("Captcha no verificado");
+  } else {
+    alert("Captcha verificado");
+    document.setElemenstByName('enviar')[0].enabledSubmit;
+  }
+}
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
