@@ -18,34 +18,34 @@
   }, false);
 })();
 
-$(document).ready(function() {
-//validar reCAPCHA
-var response = grecaptcha.getResponse();
-var TNT = 0;
+// $(document).ready(function() {
+// //validar reCAPCHA
+// var response = grecaptcha.getResponse();
+// var TNT = 0;
 
-function coincideRecapcha(){
-if(response.length == 0){
-  TNT = 1;
-    alert("Captcha no verificado");
-    //return false;
-  //evt.preventDefault();
-} else {
-  TNT = 0;
-  alert("Captcha verificado");
-  //return true;
-}
+// function coincideRecapcha(){
+// if(response.length == 0){
+//   TNT = 1;
+//     alert("Captcha no verificado");
+//     //return false;
+//   //evt.preventDefault();
+// } else {
+//   TNT = 0;
+//   alert("Captcha verificado");
+//   //return true;
+// }
 
-$("#form1").on('submit', function(evt){
-  if (TNT == 1) {
-    evt.preventDefault();
-    evt.stopPropagation();
-  }
-});
-}
-ok.keyup(function(){
-	coincideRecapcha();
-  });
-});
+// $("#form1").on('submit', function(evts){
+//   if (TNT == 1) {
+//     evts.preventDefault();
+//     evts.stopPropagation();
+//   }
+// });
+// }
+// ok.keyup(function(){
+// 	coincideRecapcha();
+//   });
+// });
 
 $(document).ready(function() {
   //variables
@@ -148,6 +148,34 @@ $(document).ready(function() {
   pass1.keyup(function(){
     coincidePassword();
     });
+
+    var response = grecaptcha.getResponse();
+    var TNT = 0;
+    
+    function coincideRecapcha(){
+    if(response.length == 0){
+      TNT = 1;
+        alert("Captcha no verificado");
+        //return false;
+      //evt.preventDefault();
+    } else {
+      TNT = 0;
+      alert("Captcha verificado");
+      //return true;
+    }
+    
+    $("#form1").on('submit', function(evts){
+      if (TNT == 1) {
+        evts.preventDefault();
+        evts.stopPropagation();
+      }
+    });
+    }
+    ok.keyup(function(){
+      coincideRecapcha();
+      });
+
+
 });
 
 // function enabledSubmit(response) {
