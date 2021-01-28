@@ -96,12 +96,8 @@
                     </div>
                   </div>
                 
-                <div class="form-group">
-                <div class="form-check">
-                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
-                          </div>
-                          </div>
-            
+                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
+                  
                   <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -121,17 +117,6 @@
     <script src="popper/popper.min.js"></script>	 	 	
     <script src="bootstrap4/js/bootstrap.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="codigo.js"></script> 
-    <script>
-  function miFuncion() {
-    var response = grecaptcha.getResponse();
-
-    if(response.length == 0){
-      alert("Captcha no verificado")
-    } else {
-      alert("Captcha verificado");
-    }
-  }
-</script>	  	
+    <script src="codigo.js"></script> 	  	
   </body>
 </html>
