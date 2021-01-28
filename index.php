@@ -98,7 +98,7 @@
                 
                 <div class="form-group">
                 <div class="form-check">
-                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" required></div> 
+                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
                           </div>
                           </div>
             
@@ -116,18 +116,6 @@
             </div>       
         </div>                  
     </div>
-
-    <script>
-      function miFuncion() {
-        var response = grecaptcha.getResponse();
-    
-        if(response.length == 0){
-          alert("Captcha no verificado")
-        } else {
-          alert("Captcha verificado");
-        }
-      }
-    </script>
       
     <script src="jquery/jquery-3.3.1.min.js"></script>	 	
     <script src="popper/popper.min.js"></script>	 	 	
