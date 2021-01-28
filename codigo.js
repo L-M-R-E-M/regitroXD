@@ -57,8 +57,6 @@ $(document).ready(function() {
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
-  var response = grecaptcha.getResponse();
-  var TNT = 0;
   var XD = 0;
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
@@ -116,28 +114,43 @@ $(document).ready(function() {
       }
   }
 
-  if(response.length == 0){​​
-
-    TNT = 1;
-
-      alert("Captcha no verificado");
-
-      //return false;
-
-    //evt.preventDefault();
-
-  }​​ else {​​
-
-    TNT = 0;
-
-    alert("Captcha verificado");
-
-    //return true;
-
-  }​​
+  
 
   
 
+  
+//   $("#form1").on('submit', function(evt){
+//   if (XD == 1) {
+//     evt.preventDefault();
+//     evt.stopPropagation();
+//   }
+// });
+	
+  }
+  //Iniciamos la funcion
+  function coincideRecapcha(){
+    var response = grecaptcha.getResponse();
+  var TNT = 0;
+    if(response.length == 0){​​
+
+      TNT = 1;
+  
+        alert("Captcha no verificado");
+  
+        //return false;
+  
+      //evt.preventDefault();
+  
+    }​​ else {​​
+  
+      TNT = 0;
+  
+      alert("Captcha verificado");
+  
+      //return true;
+  
+    }​​
+  }
   $("#form1").on('submit', function(evt){​​
 
     if (TNT == 1 && XD == 1) {​​
@@ -149,14 +162,6 @@ $(document).ready(function() {
     }​​
 
   }​​);
-//   $("#form1").on('submit', function(evt){
-//   if (XD == 1) {
-//     evt.preventDefault();
-//     evt.stopPropagation();
-//   }
-// });
-	
-  }
 	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
 	coincidePassword();
@@ -164,6 +169,9 @@ $(document).ready(function() {
   pass1.keyup(function(){
     coincidePassword();
     });
+    ok.keyup(function(){
+      coincideRecapcha();
+  });
 });
 
 
