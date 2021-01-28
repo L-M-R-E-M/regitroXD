@@ -58,7 +58,7 @@ $(document).ready(function() {
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
-  var response = grecaptcha.getResponse();
+  
   var TNT = 0;
   var XD = 0;
 	//var vacio = "La contraseña no puede estar vacía";
@@ -127,6 +127,7 @@ $(document).ready(function() {
       });
   ///////////
   function coincideRecapcha(){
+    var response = grecaptcha.getResponse();
     if(response.length == 0){
       TNT = 1;
         alert("Captcha no verificado");
