@@ -120,7 +120,7 @@ $(document).ready(function() {
     });
 });
 
-$('#invalidCheck').keyup(function(s) {
+$('#pass1').keyup(function(s) {
   var response = grecaptcha.getResponse();
 
     if(response.length == 0){
