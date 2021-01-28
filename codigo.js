@@ -10,6 +10,7 @@
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+          alert("Complete todos los apartados");
           coincideRecapcha();
         }
       form.classList.add('was-validated');
