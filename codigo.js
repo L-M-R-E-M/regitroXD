@@ -153,7 +153,7 @@ $(document).ready(function() {
 });
 
 function enabledSubmit(response) {
-  document.getElemenstByName('enviar')[0].disabled = false;
+  document.getElemenstByName('enviar')[0].enabledSubmit = true;
  }
 
 $('#pass1').keyup(function(e) {
