@@ -113,6 +113,27 @@ $(document).ready(function() {
       }
   }
 
+  var response = grecaptcha.getResponse();
+    var TNT = 0;
+    
+    if(response.length == 0){
+      TNT = 1;
+        alert("Captcha no verificado");
+        //return false;
+      //evt.preventDefault();
+    } else {
+      TNT = 0;
+      //alert("Captcha verificado");
+      //return true;
+    }
+    
+    // $("#form1").on('submit', function(evts){
+    //   if (TNT == 1) {
+    //     evts.preventDefault();
+    //     evts.stopPropagation();
+    //   }
+    // });
+
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
     evt.preventDefault();
@@ -148,34 +169,6 @@ $(document).ready(function() {
   pass1.keyup(function(){
     coincidePassword();
     });
-
-    var response = grecaptcha.getResponse();
-    var TNT = 0;
-    
-    function coincideRecapcha(){
-    if(response.length == 0){
-      TNT = 1;
-        alert("Captcha no verificado");
-        //return false;
-      //evt.preventDefault();
-    } else {
-      TNT = 0;
-      alert("Captcha verificado");
-      //return true;
-    }
-    
-    $("#form1").on('submit', function(evts){
-      if (TNT == 1) {
-        evts.preventDefault();
-        evts.stopPropagation();
-      }
-    });
-    }
-    pass1.keyup(function(){
-      coincideRecapcha();
-      });
-
-
 });
 
 // function enabledSubmit(response) {
