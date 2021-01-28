@@ -18,7 +18,7 @@
   }, false);
 })();
 
-$(document).ready(function() {
+(function() {
 //validar reCAPCHA
 var pass1 = $('[name=pass1]');
 var response = grecaptcha.getResponse();
