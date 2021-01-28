@@ -111,7 +111,8 @@ $(document).ready(function() {
     if(response.length == 0){
       alert("Captcha no verificado")
     } else {
-      alert("Captcha verificado");
+      //alert("Captcha verificado");
+      document.getElemenstByName('enviar')[0].disabled = false;
     }
   }
     
