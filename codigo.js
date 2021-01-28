@@ -10,15 +10,21 @@
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+          coincideRecapcha();
         }
-        
-    coincideRecapcha();
       form.classList.add('was-validated');
 
       }, false);
     });
   }, false);
 })();
+
+$(document).on('change','#invalidCheck',function(){
+  if(this.checked) {
+    coincideRecapcha();
+  }
+  
+});
 
 function coincideRecapcha(){
   //validar reCAPCHA
