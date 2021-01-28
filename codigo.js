@@ -18,7 +18,7 @@
   }, false);
 })();
 
-// (function() {
+// $(document).ready(function() {
 // //validar reCAPCHA
 // var nombre = $('[name=nombre]');
 // var response = grecaptcha.getResponse();
@@ -52,15 +52,13 @@ $(document).ready(function() {
   //variables
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
 	var pass1 = $('[name=pass1]');
-  var pass2 = $('[name=pass2]');
-  var nombre = $('[name=nombre]');
+	var pass2 = $('[name=pass2]');
 	var confirmacion = "¡Ok válido!";
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
-  
-  var TNT = 0;
   var XD = 0;
+  var response = grecaptcha.getResponse();
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
@@ -100,7 +98,17 @@ $(document).ready(function() {
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
             
-            XD = 0;
+            //XD = 0;
+            if(response.length == 0){
+                XD = 1;
+                  alert("Captcha no verificado");
+                  //return false;
+                //evt.preventDefault();
+              } else {
+                XD = 0;
+                alert("Captcha verificado");
+                //return true;
+              }
 
 
             }
@@ -115,42 +123,23 @@ $(document).ready(function() {
           }
         
       }
-  
+  }
+
+  $("#form1").on('submit', function(evt){
+  if (XD == 1) {
+    evt.preventDefault();
+    evt.stopPropagation();
+  }
+});
 	
   }
-}
-  pass2.keyup(function(){
+	//ejecuto la función al soltar la tecla
+	pass2.keyup(function(){
+	coincidePassword();
+  });
+  pass1.keyup(function(){
     coincidePassword();
     });
-    pass1.keyup(function(){
-      coincidePassword();
-      });
-  ///////////
-  function coincideRecapcha(){
-    var response = grecaptcha.getResponse();
-    if(response.length == 0){
-      TNT = 1;
-        alert("Captcha no verificado");
-        //return false;
-      //evt.preventDefault();
-    } else {
-      TNT = 0;
-      alert("Captcha verificado");
-      //return true;
-    }
-    }
-
-    $("#form1").on('submit', function(evt){
-      if (XD == 1 || TNT == 1) {
-        evt.preventDefault();
-        evt.stopPropagation();
-      }
-    });
-	//ejecuto la función al soltar la tecla
-	
-    nombre.keyup(function(){
-      coincideRecapcha();
-      });
 });
 
 

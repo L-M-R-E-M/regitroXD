@@ -25,13 +25,6 @@
         <div class="card-header">NUEVO REGISTRO</div>
         <div class="card-body">
         <form id="form1" name="form1" action="procesar.php" method="post" class="needs-validation" novalidate>
-                  
-        <div class="form-group">
-                <div class="form-check">
-                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
-                          </div>
-                          </div>
-                  
                   <div class="form-row">
                     <div class="col-md-4 mb-3">
                       <label for="nombre">Nombre</label>
@@ -102,6 +95,12 @@
                       <div class="invalid-feedback">Complete el campo.</div>   
                     </div>
                   </div>
+                
+                <div class="form-group">
+                <div class="form-check">
+                            <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
+                          </div>
+                          </div>
             
                   <div class="form-group">
                     <div class="form-check">
