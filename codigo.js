@@ -88,13 +88,13 @@ $(document).ready(function() {
         
       }else{
         if(strongRegex.test(valor1)){
-          if(valor1.length!=0 && valor1==valor2){
+          //if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
             XD = 0;
             $('#invalidCheck').prop('checked',false);
           
-            }
+            //}
           	
           }else{
             span.text(min).addClass('negacion');
@@ -126,16 +126,16 @@ $('#pass1').keyup(function(e) {
   var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
   var enoughRegex = new RegExp("(?=.{6,}).*", "g");
   if (false == enoughRegex.test($(this).val())) {
-          $('#passstrength').html('Pon más caracteres.');
+          $('#passstrength').html('Contraseña Muy Débil.');
   } else if (strongRegex.test($(this).val())) {
           $('#passstrength').className = 'ok';
-          $('#passstrength').html('Fuerte!');
+          $('#passstrength').html('Contraseña Fuerte!');
   } else if (mediumRegex.test($(this).val())) {
           $('#passstrength').className = 'alert';
-          $('#passstrength').html('Media!');
+          $('#passstrength').html('Contraseña Media!');
   } else {
           $('#passstrength').className = 'error';
-          $('#passstrength').html('Débil!');
+          $('#passstrength').html('Contraseña Débil!');
   }
   return true;
 });
