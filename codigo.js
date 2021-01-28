@@ -18,35 +18,35 @@
   }, false);
 })();
 
-$(document).ready(function() {
-//validar reCAPCHA
-var ok = $('[name=ok]');
-var response = grecaptcha.getResponse();
-var TNT = 0;
+// $(document).ready(function() {
+// //validar reCAPCHA
+// var ok = $('[name=ok]');
+// var response = grecaptcha.getResponse();
+// var TNT = 0;
 
-function coincideRecapcha(){
-if(response.length == 0){
-  TNT = 1;
-    alert("Captcha no verificado");
-    //return false;
-  //evt.preventDefault();
-} else {
-  TNT = 0;
-  alert("Captcha verificado");
-  //return true;
-}
+// function coincideRecapcha(){
+// if(response.length == 0){
+//   TNT = 1;
+//     alert("Captcha no verificado");
+//     //return false;
+//   //evt.preventDefault();
+// } else {
+//   TNT = 0;
+//   alert("Captcha verificado");
+//   //return true;
+// }
 
-$("#form1").on('submit', function(evt){
-  if (TNT == 1) {
-    evt.preventDefault();
-    evt.stopPropagation();
-  }
-});
-}
-ok.keyup(function(){
-	coincideRecapcha();
-  });
-});
+// $("#form1").on('submit', function(evt){
+//   if (TNT == 1) {
+//     evt.preventDefault();
+//     evt.stopPropagation();
+//   }
+// });
+// }
+// ok.keyup(function(){
+// 	coincideRecapcha();
+//   });
+// });
 
 $(document).ready(function() {
   //variables
@@ -57,6 +57,8 @@ $(document).ready(function() {
 	var longitud = "La contraseña debe estar formada entre 8-10 carácteres (ambos inclusive)";
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
+  var response = grecaptcha.getResponse();
+  var TNT = 0;
   var XD = 0;
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
@@ -114,12 +116,45 @@ $(document).ready(function() {
       }
   }
 
-  $("#form1").on('submit', function(evt){
-  if (XD == 1) {
-    evt.preventDefault();
-    evt.stopPropagation();
-  }
-});
+  if(response.length == 0){​​
+
+    TNT = 1;
+
+      alert("Captcha no verificado");
+
+      //return false;
+
+    //evt.preventDefault();
+
+  }​​ else {​​
+
+    TNT = 0;
+
+    alert("Captcha verificado");
+
+    //return true;
+
+  }​​
+
+  
+
+  $("#form1").on('submit', function(evt){​​
+
+    if (TNT == 1 && XD == 1) {​​
+
+      evt.preventDefault();
+
+      evt.stopPropagation();
+
+    }​​
+
+  }​​);
+//   $("#form1").on('submit', function(evt){
+//   if (XD == 1) {
+//     evt.preventDefault();
+//     evt.stopPropagation();
+//   }
+// });
 	
   }
 	//ejecuto la función al soltar la tecla
