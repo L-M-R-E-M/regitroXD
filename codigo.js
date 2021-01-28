@@ -121,7 +121,6 @@ $(document).ready(function() {
   if (XD == 1) {
     evt.preventDefault();
     evt.stopPropagation();
-    alert("Captcha no verificado o Contraseña incorrecta")
   }
 });	
   }
