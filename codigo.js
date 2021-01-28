@@ -20,6 +20,7 @@
 
 $(document).ready(function() {
 //validar reCAPCHA
+var pass1 = $('[name=pass1]');
 var response = grecaptcha.getResponse();
 
 function coincideRecapcha(){
@@ -33,7 +34,7 @@ function coincideRecapcha(){
     $('#boton').attr("disabled", true);
   }
 }
-invalidCheck.keyup(function(){
+pass1.keyup(function(){
 	coincideRecapcha();
   });
 });
