@@ -32,7 +32,20 @@ $(document).ready(function() {
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
-	span.hide();
+  span.hide();
+  //validar reCAPCHA
+  var response = grecaptcha.getResponse();
+
+  if(response.length == 0){
+    XD = 1;
+      alert("Captcha no verificado");
+      //return false;
+    evt.preventDefault();
+  } else {
+    XD = 0;
+    alert("Captcha verificado");
+    //return true;
+  }
 	//función que comprueba las dos contraseñas
 	function coincidePassword(){
 	var valor1 = pass1.val();
@@ -82,19 +95,6 @@ $(document).ready(function() {
           }
         
       }
-  }
-
-  var response = grecaptcha.getResponse();
-
-  if(response.length == 0){
-    XD = 1;
-      alert("Captcha no verificado");
-      //return false;
-    evt.preventDefault();
-  } else {
-    XD = 0;
-    alert("Captcha verificado");
-    //return true;
   }
 
   $("#form1").on('submit', function(evt){
