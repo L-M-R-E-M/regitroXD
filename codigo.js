@@ -26,21 +26,21 @@ $(function() {
         coincideRecapcha();
       }
   }); 
-});
 
-function coincideRecapcha(){
-  //validar reCAPCHA
-  var response = grecaptcha.getResponse();
-
-  if(response.length === 0){
-    alert("Captcha no verificado")
-    $('#boton').attr("disabled", true);
-    this.checked = false;
-  } else {
-    alert("Captcha verificado");
-    $('#boton').attr("disabled", false);
+  function coincideRecapcha(){
+    //validar reCAPCHA
+    var response = grecaptcha.getResponse();
+  
+    if(response.length === 0){
+      alert("Captcha no verificado")
+      $('#boton').attr("disabled", true);
+      this.checked = false;
+    } else {
+      alert("Captcha verificado");
+      $('#boton').attr("disabled", false);
+    }
   }
-}
+});
 
 
 $(document).ready(function() {
