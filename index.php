@@ -109,7 +109,7 @@
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">Enviar</button>
+                  <button class="btn btn-primary" name="ok" type="submit">Enviar</button>
                 </form>
         </div>   
     </div>

@@ -20,9 +20,11 @@
 
 $(document).ready(function() {
 //validar reCAPCHA
+var ok = $('[name=ok]');
 var response = grecaptcha.getResponse();
 var TNT = 0;
 
+function coincideRecapcha(){
 if(response.length == 0){
   TNT = 1;
     alert("Captcha no verificado");
@@ -40,6 +42,10 @@ $("#form1").on('submit', function(evt){
     evt.stopPropagation();
   }
 });
+}
+ok.keyup(function(){
+	coincideRecapcha();
+  });
 });
 
 $(document).ready(function() {
