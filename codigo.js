@@ -26,10 +26,10 @@ function coincideRecapcha(){
 
   if(response.length === 0){
     //alert("Captcha no verificado")
-    $('#boton').attr("disabled", false);
+    $('#boton').attr("disabled", true);
   } else {
     //alert("Captcha verificado");
-    $('#boton').attr("disabled", true);
+    $('#boton').attr("disabled", false);
   }
 }
 
