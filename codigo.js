@@ -62,6 +62,16 @@ $(document).ready(function() {
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
   span.hide();
+
+  var response = grecaptcha.getResponse();
+
+    if(response.length == 0){
+      //alert("Captcha no verificado")
+      CD = 1;
+    } else {
+      //alert("Captcha verificado");
+      CD = 0;
+    }
   
 	//función que comprueba las dos contraseñas
 	function coincidePassword(){
@@ -104,19 +114,7 @@ $(document).ready(function() {
           }
         
       }
-  }
-  
-  
-    var response = grecaptcha.getResponse();
-
-    if(response.length == 0){
-      //alert("Captcha no verificado")
-      CD = 1;
-    } else {
-      //alert("Captcha verificado");
-      CD = 0;
-    }
-  
+  }  
     
   $("#form1").on('submit', function(evt){
   if (XD == 1 || CD == 1) {
