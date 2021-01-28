@@ -105,7 +105,7 @@
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" type="submit">Enviar</button>
+                  <button class="btn btn-primary" id="boton" type="submit" disabled>Enviar</button>
                 </form>
         </div>   
     </div>
