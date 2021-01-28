@@ -6,12 +6,11 @@
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
-      coincideRecapcha();
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
-          alert("Complete todos los apartados");
+          //alert("Complete todos los apartados");
         }
       form.classList.add('was-validated');
 
@@ -19,6 +18,10 @@
     });
   }, false);
 })();
+
+
+
+
 
 $(function() {
 
@@ -33,11 +36,11 @@ $(function() {
     var response = grecaptcha.getResponse();
   
     if(response.length === 0){
-      alert("Captcha no verificado")
+      //alert("Captcha no verificado")
       $('#boton').attr("disabled", true);
       $('#invalidCheck').prop('checked',false);
     } else {
-      alert("Captcha verificado");
+      //alert("Captcha verificado");
       $('#boton').attr("disabled", false);
     }
   }
