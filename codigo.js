@@ -18,35 +18,35 @@
   }, false);
 })();
 
-// $(document).ready(function() {
-// //validar reCAPCHA
-// var ok = $('[name=ok]');
-// var response = grecaptcha.getResponse();
-// var TNT = 0;
+$(document).ready(function() {
+//validar reCAPCHA
+var nombre = $('[name=nombre]');
+var response = grecaptcha.getResponse();
+var TNT = 0;
 
-// function coincideRecapcha(){
-// if(response.length == 0){
-//   TNT = 1;
-//     alert("Captcha no verificado");
-//     //return false;
-//   //evt.preventDefault();
-// } else {
-//   TNT = 0;
-//   alert("Captcha verificado");
-//   //return true;
-// }
+function coincideRecapcha(){
+if(response.length == 0){
+  TNT = 1;
+    alert("Captcha no verificado");
+    //return false;
+  //evt.preventDefault();
+} else {
+  TNT = 0;
+  alert("Captcha verificado");
+  //return true;
+}
 
-// $("#form1").on('submit', function(evt){
-//   if (TNT == 1) {
-//     evt.preventDefault();
-//     evt.stopPropagation();
-//   }
-// });
-// }
-// ok.keyup(function(){
-// 	coincideRecapcha();
-//   });
-// });
+$("#form1").on('submit', function(evt){
+  if (TNT == 1) {
+    evt.preventDefault();
+    evt.stopPropagation();
+  }
+});
+}
+nombre.keyup(function(){
+	coincideRecapcha();
+  });
+});
 
 $(document).ready(function() {
   //variables
@@ -114,54 +114,14 @@ $(document).ready(function() {
       }
   }
 
-  
-
-  
-
-  
-//   $("#form1").on('submit', function(evt){
-//   if (XD == 1) {
-//     evt.preventDefault();
-//     evt.stopPropagation();
-//   }
-// });
+  $("#form1").on('submit', function(evt){
+  if (XD == 1) {
+    evt.preventDefault();
+    evt.stopPropagation();
+  }
+});
 	
   }
-  //Iniciamos la funcion
-  function coincideRecapcha(){
-    var response = grecaptcha.getResponse();
-  var TNT = 0;
-    if(response.length == 0){​​
-
-      TNT = 1;
-  
-        alert("Captcha no verificado");
-  
-        //return false;
-  
-      //evt.preventDefault();
-  
-    }​​ else {​​
-  
-      TNT = 0;
-  
-      alert("Captcha verificado");
-  
-      //return true;
-  
-    }​​
-  }
-  $("#form1").on('submit', function(evt){​​
-
-    if (TNT == 1 && XD == 1) {​​
-
-      evt.preventDefault();
-
-      evt.stopPropagation();
-
-    }​​
-
-  }​​);
 	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
 	coincidePassword();
@@ -169,9 +129,6 @@ $(document).ready(function() {
   pass1.keyup(function(){
     coincidePassword();
     });
-    ok.keyup(function(){
-      coincideRecapcha();
-  });
 });
 
 
