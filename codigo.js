@@ -171,7 +171,7 @@ $(document).ready(function() {
       }
     });
     }
-    ok.keyup(function(){
+    pass1.keyup(function(){
       coincideRecapcha();
       });
 

@@ -100,7 +100,7 @@
                   
                   <div class="form-group">
                     <div class="form-check">
-                      <input class="form-check-input" name="ok" type="checkbox" value="" id="invalidCheck" required>
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                       <label class="form-check-label" for="invalidCheck">Acepto términos y condiciones</label>
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
