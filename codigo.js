@@ -57,8 +57,6 @@ $(document).ready(function() {
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
   var XD = 0;
-  var response = grecaptcha.getResponse();
-  var TNT = 0;
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
@@ -80,16 +78,12 @@ $(document).ready(function() {
 	if(valor1.length<8 || valor1.length>10){
   span.text(longitud).addClass('negacion');
   
-    //evt.preventDefault();
-    //evt.stopPropagation();
     XD = 1;
     
 	}else{
     if(valor1 != valor2){
       span.text(negacion).addClass('negacion');	
       
-        //evt.preventDefault();
-        //evt.stopPropagation();
         XD = 1;
         
       }else{
@@ -97,17 +91,13 @@ $(document).ready(function() {
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
       
-            
             XD = 0;
           
-
             }
           	
           }else{
             span.text(min).addClass('negacion');
             
-              //evt.preventDefault();
-              //evt.stopPropagation();
               XD = 1;
               
           }
@@ -115,16 +105,15 @@ $(document).ready(function() {
       }
   }
   
+  if(XD == 0){
+    var response = grecaptcha.getResponse();
+
     if(response.length == 0){
-      TNT = 1;
-        alert("Captcha no verificado");
-        //return false;
-      //evt.preventDefault();
+      alert("Captcha no verificado")
     } else {
-      TNT = 0;
-      //alert("Captcha verificado");
-      //return true;
+      alert("Captcha verificado");
     }
+  }
     
   $("#form1").on('submit', function(evt){
   if (XD == 1) {
@@ -133,28 +122,6 @@ $(document).ready(function() {
   }
 });	
   }
-
-    // var response = grecaptcha.getResponse();
-    // var TNT = 0;
-    //           if(response.length == 0){
-    //             TNT = 1;
-    //                 alert("Captcha no verificado");
-    //                 //return false;
-    //               //evt.preventDefault();
-    //             } else {
-    //               TNT = 0;
-    //               alert("Captcha verificado");
-    //               //return true;
-    //             }
-
-    //             $("#form1").on('submit', function(evto){
-    //               if (TNT == 1) {
-    //                 evto.preventDefault();
-    //                 evto.stopPropagation();
-    //               }
-    //             });
-        
-	//ejecuto la función al soltar la tecla
 	pass2.keyup(function(){
 	coincidePassword();
   });
@@ -162,22 +129,6 @@ $(document).ready(function() {
     coincidePassword();
     });
 });
-
-// function enabledSubmit(response) {
-//   document.getElemenstByName('enviar')[0].disabled = false;
-
-//  }
-
-//  function miFuncion(a) {
-//   var response = grecaptcha.getResponse();
-
-//   if(response.length == 0){
-//       alert("Captcha no verificado");
-//   } else {
-//     alert("Captcha verificado");
-//     document.setElemenstByName('enviar')[0].enabledSubmit;
-//   }
-// }
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
