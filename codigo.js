@@ -33,10 +33,10 @@ function coincideRecapcha(){
   var response = grecaptcha.getResponse();
 
   if(response.length === 0){
-    //alert("Captcha no verificado")
+    alert("Captcha no verificado")
     $('#boton').attr("disabled", true);
   } else {
-    //alert("Captcha verificado");
+    alert("Captcha verificado");
     $('#boton').attr("disabled", false);
   }
 }
