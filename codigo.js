@@ -20,8 +20,6 @@
   }, false);
 })();
 
-coincideRecapcha();
-
 function coincideRecapcha(){
   //validar reCAPCHA
   var response = grecaptcha.getResponse();
