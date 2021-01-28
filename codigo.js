@@ -6,12 +6,12 @@
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
+      coincideRecapcha();
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
           alert("Complete todos los apartados");
-          coincideRecapcha();
         }
       form.classList.add('was-validated');
 
