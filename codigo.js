@@ -35,6 +35,7 @@ function coincideRecapcha(){
   if(response.length === 0){
     alert("Captcha no verificado")
     $('#boton').attr("disabled", true);
+    this.checked = false;
   } else {
     alert("Captcha verificado");
     $('#boton').attr("disabled", false);
@@ -85,8 +86,6 @@ $(document).ready(function() {
         if(strongRegex.test(valor1)){
           if(valor1.length!=0 && valor1==valor2){
             span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
-            
-            coincideRecapcha();
       
             XD = 0;
           
