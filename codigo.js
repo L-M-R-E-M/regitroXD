@@ -57,6 +57,7 @@ $(document).ready(function() {
   var negacion = "No coinciden las contraseñas";
   var min = "La clave debe tener al menos [a-z], [A-Z], [0-9] y [&$%#/()*]";
   var XD = 0;
+  var CD = 0;
 	//var vacio = "La contraseña no puede estar vacía";
 	//oculto por defecto el elemento span
 	var span = $('<span></span>').insertAfter(pass2);
@@ -105,20 +106,20 @@ $(document).ready(function() {
       }
   }
   
-  if(XD == 0){
+  
     var response = grecaptcha.getResponse();
 
     if(response.length == 0){
       //alert("Captcha no verificado")
-      XD = 1;
+      CD = 1;
     } else {
       //alert("Captcha verificado");
-      XD = 0;
+      CD = 0;
     }
-  }
+  
     
   $("#form1").on('submit', function(evt){
-  if (XD == 1) {
+  if (XD == 1 || CD == 1) {
     evt.preventDefault();
     evt.stopPropagation();
   }
