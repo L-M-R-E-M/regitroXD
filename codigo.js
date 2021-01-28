@@ -18,34 +18,25 @@
   }, false);
 })();
 
-// $(document).ready(function() {
-// //validar reCAPCHA
-// var response = grecaptcha.getResponse();
-// var TNT = 0;
+$(document).ready(function() {
+//validar reCAPCHA
+var response = grecaptcha.getResponse();
 
-// function coincideRecapcha(){
-// if(response.length == 0){
-//   TNT = 1;
-//     alert("Captcha no verificado");
-//     //return false;
-//   //evt.preventDefault();
-// } else {
-//   TNT = 0;
-//   alert("Captcha verificado");
-//   //return true;
-// }
+function coincideRecapcha(){
+  
 
-// $("#form1").on('submit', function(evts){
-//   if (TNT == 1) {
-//     evts.preventDefault();
-//     evts.stopPropagation();
-//   }
-// });
-// }
-// ok.keyup(function(){
-// 	coincideRecapcha();
-//   });
-// });
+  if(response.length === 0){
+    //alert("Captcha no verificado")
+    $('#boton').attr("disabled", false);
+  } else {
+    //alert("Captcha verificado");
+    $('#boton').attr("disabled", true);
+  }
+}
+invalidCheck.keyup(function(){
+	coincideRecapcha();
+  });
+});
 
 $(document).ready(function() {
   //variables
@@ -119,16 +110,6 @@ $(document).ready(function() {
     coincidePassword();
     });
 });
-
-var response = grecaptcha.getResponse();
-
-    if(response.length === 0){
-      //alert("Captcha no verificado")
-      $('#boton').attr("disabled", false);
-    } else {
-      //alert("Captcha verificado");
-      $('#boton').attr("disabled", true);
-    }
 
 $('#pass1').keyup(function(e) {
   var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");

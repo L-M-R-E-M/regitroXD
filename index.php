@@ -96,7 +96,7 @@
                     </div>
                   </div>
                 
-                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX" data-callback="enabledSubmit"></div> 
+                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX"></div> 
                   
                   <div class="form-group">
                     <div class="form-check">
@@ -105,7 +105,7 @@
                       <div class="valid-feedback">¡Aceptado!</div>
                     </div>
                   </div>
-                  <button class="btn btn-primary" id="boton" type="submit" disabled>Enviar</button>
+                  <button class="btn btn-primary" id="boton" name="boton" type="submit" disabled>Enviar</button>
                 </form>
         </div>   
     </div>
